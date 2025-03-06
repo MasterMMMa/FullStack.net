@@ -1,0 +1,159 @@
+01 Introduction to C# and Data Types
+Understanding Data Types
+Test your Knowledge
+1. What type would you choose for the following “numbers”?
+A person’s telephone number -> string
+A person’s height -> float
+A person’s age -> short
+A person’s gender (Male, Female, Prefer Not To Answer) -> string/enum
+A person’s salary -> decimal
+A book’s ISBN -> long
+A book’s price -> decimal
+A book’s shipping weight -> float/double
+A country’s population -> long
+The number of stars in the universe -> long
+The number of employees in each of the small or medium businesses in the
+United Kingdom (up to about 50,000 employees per business) ->int
+
+2. What are the difference between value type and reference type variables? What is
+boxing and unboxing?
+1. Value types stores on stack, reference type stores on heap.
+2. Value type will directly hold the value, reference type will hold the memory address or reference of the value.
+3. Garbage collector will not collect value type but it will collect reference type.
+4. Value type cannot accept null value, reference type can accept nulls.
+
+3. What is meant by the terms managed resource and unmanaged resource in .NET
+Managed resources are objects that are allocated and managed by the .NET Common Language Runtime (CLR) and garbage collector.
+Unmanaged resource need to be released manually by calling dispose()
+
+
+4. Whats the purpose of Garbage Collector in .NET?
+Garbage Collector works as a automatic memory manager， it automatically managing memory allocation and deallocation.
+
+
+
+Test your Knowledge
+1. What happens when you divide an int variable by 0?
+There will be a compiler error, because division by 0 is undefined.
+
+2. What happens when you divide a double variable by 0?
+The double would be positive infinity.
+
+3. What happens when you overflow an int variable, that is, set it to a value beyond its
+range?
+
+An integer overflow error was detected at compile time
+4. What is the difference between x = y++; and x = ++y;?
+y++ is assign the value first then perform increment, ++y increase first then assign the value. 
+
+5. What is the difference between break, continue, and return when used inside a loop statement?
+Break exits the loop immediately and continues execution after the loop.
+Continue skip this iteration and sip to next one.
+Return exit the program the return the value.
+
+6. What are the three parts of a for statement and which of them are required?
+Initializer (sets up initial state), Condition (determines when to stop), Iterator
+
+7. What is the difference between the = and == operators?
+= is assignment operator, == is check if two values are equal or not.
+
+8. Does the following statement compile? for ( ; true; ) ;
+yes, it's a infinite loop.
+
+9. What does the underscore _ represent in a switch expression?
+The underscore _ in a switch expression represents the default case
+
+10. What interface must an object implement to be enumerated over by using the foreach
+statement?
+An object must implement the IEnumerable or IEnumerable<T> interface.
+
+
+
+Practice loops and operators
+1. FizzBuzzis a group word game for children to teach them about division. Players take turns
+to count incrementally, replacing any number divisible by three with the word /fizz/, any
+number divisible by five with the word /buzz/, and any number divisible by both with /
+fizzbuzz/.
+Create a console application in Chapter03 named Exercise03 that outputs a simulated
+FizzBuzz game counting up to 100. The output should look something like the following
+screenshot:
+What will happen if this code executes?
+int max = 500;
+for (byte i = 0; i < max; i++)
+{
+WriteLine(i);
+}
+Create a console application and enter the preceding code. Run the console application
+and view the output. What happens?
+What code could you add (don’t change any of the preceding code) to warn us about the
+problem?
+Your program can create a random number between 1 and 3 with the following code:
+int correctNumber = new Random().Next(3) + 1;
+Write a program that generates a random number between 1 and 3 and asks the user to
+guess what the number is. Tell the user if they guess low, high, or get the correct answer.
+Also, tell the user if their answer is outside of the range of numbers that are valid guesses
+(less than 1 or more than 3). You can convert the user's typed answer from a string to an
+int using this code:
+int guessedNumber = int.Parse(Console.ReadLine());
+Note that the above code will crash the program if the user doesn't type an integer value.
+For this exercise, assume the user will only enter valid guesses.
+2. Print-a-Pyramid.Like the star pattern examples that we saw earlier, create a program that
+will print the following pattern: If you find yourself getting stuck, try recreating the two
+examples that we just talked about in this chapter first. They’re simpler, and you can
+compare your results with the code included above.
+This can actually be a pretty challenging problem, so here is a hint to get you going. I used
+three total loops. One big one contains two smaller loops. The bigger loop goes from line
+to line. The first of the two inner loops prints the correct number of spaces, while the
+second inner loop prints out the correct number of stars.
+*
+***
+*****
+*******
+*********
+3. Write a program that generates a random number between 1 and 3 and asks the user to
+guess what the number is. Tell the user if they guess low, high, or get the correct answer.
+Also, tell the user if their answer is outside of the range of numbers that are valid guesses
+(less than 1 or more than 3). You can convert the user's typed answer from a string to an
+int using this code:
+int guessedNumber = int.Parse(Console.ReadLine());
+Note that the above code will crash the program if the user doesn't type an integer value.
+For this exercise, assume the user will only enter valid guesses.
+4. Write a simple program that defines a variable representing a birth date and calculates
+how many days old the person with that birth date is currently.
+For extra credit, output the date of their next 10,000 day (about 27 years) anniversary.
+Note: once you figure out their age in days, you can calculate the days until the next
+anniversary using int daysToNextAnniversary = 10000 - (days % 10000); .
+5. Write a program that greets the user using the appropriate greeting for the time of day.
+Use only if , not else or switch , statements to do so. Be sure to include the following
+greetings:
+"Good Morning"
+"Good Afternoon"
+"Good Evening"
+"Good Night"
+It's up to you which times should serve as the starting and ending ranges for each of the
+greetings. If you need a refresher on how to get the current time, see DateTime
+Formatting. When testing your program, you'll probably want to use a DateTime variable
+you define, rather than the current time. Once you're confident the program works
+correctly, you can substitute DateTime.Now for your variable (or keep your variable and just
+assign DateTime.Now as its value, which is often a better approach).
+6. Write a program that prints the result of counting up to 24 using four different increments.
+First, count by 1s, then by 2s, by 3s, and finally by 4s.
+Use nested for loops with your outer loop counting from 1 to 4. You inner loop should
+count from 0 to 24, but increase the value of its /loop control variable/ by the value of the /
+loop control variable/ from the outer loop. This means the incrementing in the /
+afterthought/ expression will be based on a variable.
+Your output should look something like this:
+0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
+0,2,4,6,8,10,12,14,16,18,20,22,24
+0,3,6,9,12,15,18,21,24
+0,4,8,12,16,20,24
+Explore following topics
+C# operators
+Bitwise and shift operators
+Statement keywords
+Casting and type conversions
+Fundamentals of garbage collection
+$ - string interpolation
+Formatting types in .NET
+Iteration statements
+Selection statements
